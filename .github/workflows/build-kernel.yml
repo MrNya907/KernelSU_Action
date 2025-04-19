@@ -96,8 +96,8 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         mkdir clang-aosp
-        wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/${{ env.CLANG_BRANCH }}/clang-${{ env.CLANG_VERSION }}.tar.gz
-        tar -C clang-aosp/ -zxvf clang-${{ env.CLANG_VERSION }}.tar.gz
+        cd clang-aosp
+        git clone https://github.com/MrNya907/clang-r383902b1-odin
 
     - name: Download Custom-Clang
       if: env.USE_CUSTOM_CLANG == 'true'
